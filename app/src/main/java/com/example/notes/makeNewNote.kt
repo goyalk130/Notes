@@ -1,6 +1,7 @@
 package com.example.notes
 
 
+import android.R.attr
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_create_new_note.*
+import kotlinx.android.synthetic.main.activity_show.*
+import android.R.attr.label
+
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
+
 
 class makeNewNote : AppCompatActivity() {
 
@@ -76,6 +84,30 @@ class makeNewNote : AppCompatActivity() {
         }
         if (item.itemId == android.R.id.home){
             activityback()
+            return true
+        }
+        if(item.itemId== R.id.share){
+            val title = editTextTextPersonName.text.toString()
+            val text =enternote.text.toString()
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, title+"\n"+text)
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+            return true
+        }
+        if(item.itemId==R.id.copy){
+            val title = editTextTextPersonName.text.toString()
+            val text =enternote.text.toString()
+            val clipboard: ClipboardManager =
+
+                getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("label", title+"\n"+text)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(this,"Note Copied",Toast.LENGTH_SHORT).show()
             return true
         }
 

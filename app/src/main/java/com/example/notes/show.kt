@@ -1,6 +1,9 @@
 package com.example.notes
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -65,7 +68,7 @@ class show : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.delete_note){
+        if (item.itemId == R.id.delete_note) {
             currentNoteId?.let {
                 viewModel.deleteNote(it.toInt())
 //                Toast.makeText(this,"delete chala",Toast.LENGTH_SHORT).show()
@@ -73,15 +76,39 @@ class show : AppCompatActivity() {
             }
             return true
         }
-        if (item.itemId == R.id.save_note){
+        if (item.itemId == R.id.save_note) {
             updatingnote()
             return true
         }
+        if (item.itemId == R.id.share) {
+            val title = thisistitleofanote.text.toString()
+            val text = textView2.text.toString()
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, title + "\n" + text)
+                type = "text/plain"
+            }
 
-        else{
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+            return true
+        }
+        if (item.itemId == R.id.copy) {
+            val title = thisistitleofanote.text.toString()
+            val text = textView2.text.toString()
+            val clipboard: ClipboardManager =
+
+                getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("label", title + "\n" + text)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(this,"Note Copied",Toast.LENGTH_SHORT).show()
+            return true
+        }
+        else {
             return super.onOptionsItemSelected(item)
         }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         updatingnote()
