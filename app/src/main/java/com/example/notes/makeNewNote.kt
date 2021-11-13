@@ -108,6 +108,7 @@ class makeNewNote : AppCompatActivity() {
             val clip = ClipData.newPlainText("label", title+"\n"+text)
             clipboard.setPrimaryClip(clip)
             Toast.makeText(this,"Note Copied",Toast.LENGTH_SHORT).show()
+
             return true
         }
 
