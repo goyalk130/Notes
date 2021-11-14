@@ -27,3 +27,6 @@ https://www.linkedin.com/in/karan-goyal-205576208/
 downalod apk from this link
 https://drive.google.com/file/d/1vW3tcqy7-y26Z5mfBULAi6EQG68l9Ttu/view?usp=sharing
 
+
+
+![ss of notes app](https://user-images.githubusercontent.com/56532529/141679204-3d66a028-a97e-4fd0-b04c-acaf40bd0c44.png)
