@@ -3,7 +3,7 @@ Our very first project
 
 A simple and completely secured notes app
 
-- Not connected to internet so Your data is completely secured
+- Your data is stored in a completely isolated mechanism which minimizes the risk of any breach
 
 - App don't ask for any kind of permission from You like other apps in market
 
