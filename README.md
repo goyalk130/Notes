@@ -22,8 +22,7 @@ People behind this project
 1. download app debug APK file
 2. and just install it You are good to go
 
-download APK from this link
-https://drive.google.com/file/d/1vW3tcqy7-y26Z5mfBULAi6EQG68l9Ttu/view?usp=sharing
+download APK from this link [here](https://drive.google.com/file/d/1vW3tcqy7-y26Z5mfBULAi6EQG68l9Ttu/view?usp=sharing)
 
 
 
