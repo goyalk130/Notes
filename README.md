@@ -17,7 +17,7 @@ People behind this project
 
 [Kaushik Sharma](https://www.linkedin.com/in/kaushik-sharma-239340192/)
 
-[Karan Goayl](https://www.linkedin.com/in/karan-goyal-205576208/)
+[Karan Goyal](https://www.linkedin.com/in/karan-goyal-205576208/)
 
 1. download app debug APK file
 2. and just install it You are good to go
